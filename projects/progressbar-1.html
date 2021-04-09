@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Progress Bar 01</title>
+<style>
+
+#mkwrap{display:block;width:100vw;height:100vh;overflow:hidden;margin:0 auto;position:fixed;top:0;left:0;}
+#progwrap{display:block;width:600px;max-width:800px;height:auto;position:fixed;bottom:50px;left:18px;background-color:rgba(0,0,0,.8);padding:.3em .5em 1.7em;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;border-radius:10px;}
+#progwrap p{display:block;width:90%;height:auto;padding:.3em .5em .3em;margin:0 auto;color:#fff;font-size:2vw;text-transform:uppercase;}
+#progress{display:block;width:90%;height:30px;padding:.3em;background-color:#666;border-radius:7px;box-shadow:inset 0 0 3px #888;background: linear-gradient(45deg, #333 1.25%, #222 1.25%, #222 48.75%, #333 48.75%, #333 51.25%, #222 51.25%, #222 98.75%, #333 98.75%);background-size: 5px 5px;background-position: 50px 50px;}
+
+#fill{border-radius:7px 0px 0px 7px;}
+
+[class*="f-"]{width:0%;height:30px;color:#fff;font-size:18px;font-family:sans-serif;transition:linear .2s;}
+
+.f-10{display:block;width:10%;height:30px;background-color:#F0F;}
+.f-20{display:block;width:20%;height:30px;background-color:#F0C;}
+.f-30{display:block;width:30%;height:30px;background-color:#F09;}
+.f-40{display:block;width:40%;height:30px;background-color:#F06;}
+.f-50{display:block;width:50%;height:30px;background-color:#F03;}
+.f-60{display:block;width:60%;height:30px;background-color:#F00;}
+.f-70{display:block;width:70%;height:30px;background-color:#900;}
+.f-80{display:block;width:80%;height:30px;background-color:#900;}
+.f-90{display:block;width:90%;height:30px;background-color:#900;}
+.f-100{display:block;width:100%;height:30px;background-color:#900;}
+
+.f-10:before{content:'10%';color:#fff;display:block;transform:translate(10%,5px);}
+.f-20:before{content:'20%';color:#fff;display:block;transform:translate(20%,5px);}
+.f-30:before{content:'30%';color:#fff;display:block;transform:translate(30%,5px);}
+.f-40:before{content:'40%';color:#fff;display:block;transform:translate(40%,5px);}
+.f-50:before{content:'50%';color:#fff;display:block;transform:translate(50%,5px);}
+.f-60:before{content:'60%';color:#fff;display:block;transform:translate(60%,5px);}
+.f-70:before{content:'70%';color:#fff;display:block;transform:translate(70%,5px);}
+.f-80:before{content:'80%';color:#fff;display:block;transform:translate(80%,5px);}
+.f-90:before{content:'90%';color:#fff;display:block;transform:translate(90%,5px);}
+.f-100:before{content:'100%';color:#fff;display:block;transform:translate(90%,5px);}
+.f-100:after{content:'♡';display:inline-block;width:70px;height:70px;font-size:3vw;color:#FC0;text-align:center;transform: translate(10px,-46px) rotateY(-180deg);position:absolute;right:20px;animation: SpinStar 8s infinite;}
+
+@keyframes SpinStar{
+	0%{transform:translate(20px,-46px) rotateY(-180deg);}
+	50%{transform:translate(20px,-46px) rotateY(0deg);filter:drop-shadow(0 0 7px #FFF);}
+	100%{transform:translate(20px,-46px) rotateY(-180deg);}
+	}
+
+
+
+
+
+
+
+
+
+
+.btndemowrap{position:fixed;top:20px;left:40px;z-index:999999999;}
+.btn1{display:inline-block;margin-left:20px;}
+.btn1:hover{background-color:#09C;color:#fff;}
+
+.btn2{display:inline-block;margin-left:20px;}
+.btn2:hover{background-color:#09C;color:#fff;}
+
+.btn3{display:inline-block;margin-left:20px;}
+.btn3:hover{background-color:#09C;color:#fff;}
+</style>
+</head>
+
+<body>
+
+  
+  
+  
+  
+  
+  
+  
+  <div id="mkwrap">
+     <div id="progwrap">
+     <p>Reach My Goal</p>
+       <div id="progress">
+         <div id="fill"></div>
+       </div>
+     </div>
+  
+  </div>
+
+
+<div class="btndemowrap">
+<button class="btn1" onclick="changeFill10()">fill 10%</button>
+<button class="btn2" onclick="changeFill50()">fill 50%</button>
+<button class="btn3" onclick="changeFill100()">fill 100%</button>
+</div>
+
+<script>
+// fill 50
+function changeFill50() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-50");
+element.classList.remove("f-10","f-100");
+};
+</script>
+
+<script>
+// fill 10
+function changeFill10() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-10");
+element.classList.remove("f-50","f-100");
+};
+</script>
+<script>
+// fill 100
+function changeFill100() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-100");
+element.classList.remove("f-50", "f-10");
+};
+</script>
+
+</body>
+</html>

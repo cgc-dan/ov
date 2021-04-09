@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Progress Bar 02</title>
+<style>
+
+#mkwrap{display:block;width:100vw;height:100vh;overflow:hidden;margin:0 auto;position:fixed;top:0;left:0;}
+#progwrap{display:block;width:600px;max-width:800px;height:95vh;position:fixed;top:5px;left:5px;background-color:rgba(0,0,0,.6);padding:.3em .5em 1em;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;border-radius:10px;overflow:hidden;}
+#progwrap p{display:block;width:90%;height:auto;padding:.3em .5em .3em;margin:0 auto;color:#fff;font-size:2vw;text-transform:uppercase;text-align:center;}
+#progress{display:block;width:80%;height:auto;padding:.3em;margin:6px auto 7px auto;border-radius:7px;text-align:center;overflow:hidden;}
+#progress img{display:block;width:100%;height:auto;margin:0 auto;}
+#fill{border-radius:7px 0px 0px 7px;}
+#fill img{transform:translateY(100vh);}
+[class*="f-"]{display:block;transition:linear .4s;}
+.f-0{display:block;width:100%;height:auto;transform:translateY(0vh);}
+.f-10{display:block;width:100%;height:auto;transform:translateY(-15vh);}
+.f-20{display:block;width:100%;height:auto;transform:translateY(-25vh);}
+.f-30{display:block;width:100%;height:auto;transform:translateY(-30vh);}
+.f-40{display:block;width:100%;height:auto;transform:translateY(-40vh);}
+.f-50{display:block;width:100%;height:auto;transform:translateY(-50vh);}
+.f-60{display:block;width:100%;height:auto;transform:translateY(-60vh);}
+.f-70{display:block;width:100%;height:auto;transform:translateY(-70vh);}
+.f-80{display:block;width:100%;height:auto;transform:translateY(-80vh);}
+.f-90{display:block;width:100%;height:auto;transform:translateY(-90vh);}
+.f-100{display:block;width:100%;height:auto;transform:translateY(-100vh);}
+.f-100 img{animation: Blink 1s infinite;}
+
+
+@keyframes Blink{
+	0%{filter:drop-shadow(0 0 1px #F09);}
+	50%{filter:drop-shadow(0 0 25px #F09);}
+	100%{filter:drop-shadow(0 0 1px #F09);}
+	}
+
+
+
+
+
+
+
+
+.btndemowrap{width:50%;height:100px;position:fixed;top:20px;right:40px;z-index:999999999;}
+.btn1{display:inline-block;margin-left:20px;}
+.btn1:hover{background-color:#09C;color:#fff;}
+
+.btn2{display:inline-block;margin-left:20px;}
+.btn2:hover{background-color:#09C;color:#fff;}
+
+.btn3{display:inline-block;margin-left:20px;}
+.btn3:hover{background-color:#09C;color:#fff;}
+</style>
+</head>
+
+<body>
+
+  
+  
+  
+  
+  
+  
+  
+  <div id="mkwrap">
+     <div id="progwrap">
+     <p>Reaveal</p>
+       <div id="progress">
+         <div id="fill"><img src="https://d31rb55u3y3kjs.cloudfront.net/c/u/520476279851687b6dabcc7189410390/2020/10/20060930/mdl0l_cgc.gif"/></div>
+       </div>
+     </div>
+  
+  </div>
+
+
+<div class="btndemowrap">
+<button class="btn1" onclick="changeFill10()">fill 10%</button>
+<button class="btn2" onclick="changeFill50()">fill 50%</button>
+<button class="btn3" onclick="changeFill100()">fill 100%</button>
+</div>
+
+<script>
+// fill 50
+function changeFill50() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-50");
+element.classList.remove("f-10","f-100");
+};
+</script>
+
+<script>
+// fill 10
+function changeFill10() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-10");
+element.classList.remove("f-50","f-100");
+};
+</script>
+<script>
+// fill 100
+function changeFill100() {
+ var element = document.getElementById("fill");
+element.classList.toggle("f-100");
+element.classList.remove("f-50", "f-10");
+};
+</script>
+
+</body>
+</html>
